@@ -1,3 +1,12 @@
+# Animal.py
+# ---------
+# by Chris Proctor
+
+# This module implements the class Animal, which represents an animal. 
+# Animals are not very interesting on their own, but they can be subclassed
+# to create your own, more interesting animals. You will need to understand
+# the code in this module well, so ask if you have any questions about how
+# something works.
 
 class Animal:
 
@@ -6,21 +15,31 @@ class Animal:
     other animals.
     """
 
-    def __init__(self, name, log):
-        "When animals are created, they should be given "
+    species = "animal"
+
+    def __init__(self, name, traits=None):
         self.name = name
-        self.log = log
 
-    def validate(self):
-        return True
+    def __str__(self):
+        return "{} the animal".format(self.name)
 
+    def __repr__(self):
+        return "<animal named {}>".format(self.name)
 
     def encounter(self, other_animal):
-        pass
+        """
+        Encounter should always return a dict representing the result of the encounter.
+        This must include a message an an action. Supported actions include "die", "eat", 
+        and "mate". If the action is "mate", then "child" should be a new Animal.
+        """
+        return {
+            "message": "Hello there, {}".format(other_animal.name),
+            "action": None, 
+            "child": None
+        }
 
-class InvalidAnimalError(Exception):
-    """
-    Errors are objects too! Here, we have created a special error for when 
-    an animal is not valid. We don't need any special behavior different from 
-    the usual behavior of an Exception.
-    """
+    def mate(self, other_animal):
+        """
+        Mate should return an Animal or None.
+        """
+        return Animal("Child of {}".format(self.name))
