@@ -1,4 +1,4 @@
-# Forest.py
+# forest.py
 # ---------
 # by Chris Proctor
 

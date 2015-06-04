@@ -1,4 +1,4 @@
-# Animal.py
+# animal.py
 # ---------
 # by Chris Proctor
 
