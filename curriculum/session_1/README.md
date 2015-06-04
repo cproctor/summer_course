@@ -47,7 +47,7 @@ Today's plan
     - classes, instances, methods, interfaces, variable scope
     - Python class syntax
     - a few magic methods
-    - Implement Animal subclasses with a petting zoo. 
+    - Play with a few classes: Animals in the Forest
     - Design classes for a card game.
 
 Homework
