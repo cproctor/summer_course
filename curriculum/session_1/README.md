@@ -41,6 +41,10 @@ Today's plan
     - lists
     - dicts
     - functions
+    - odds and ends
+        
+        - string formatting
+        - documentation (docstrings and comments)
 
 1. Introduce the concept of Object-Oriented Programming.
 
