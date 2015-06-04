@@ -43,4 +43,5 @@ class Animal:
         """
         Mate should return a list containing zero or more Animals.
         """
-        return [Animal("Child of {}".format(self.name))]
+        child = Animal("Child of {}".format(self.name))
+        return [child]
