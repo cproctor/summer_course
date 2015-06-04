@@ -30,16 +30,17 @@ class Animal:
         """
         Encounter should always return a dict representing the result of the encounter.
         This must include a message an an action. Supported actions include "die", "eat", 
-        and "mate". If the action is "mate", then "child" should be a new Animal.
+        and "mate". If the action is "mate", then "children" should be a list containing
+        zero or more Animals.
         """
         return {
             "message": "Hello there, {}".format(other_animal.name),
             "action": None, 
-            "child": None
+            "children": []
         }
 
     def mate(self, other_animal):
         """
-        Mate should return an Animal or None.
+        Mate should return a list containing zero or more Animals.
         """
-        return Animal("Child of {}".format(self.name))
+        return [Animal("Child of {}".format(self.name))]

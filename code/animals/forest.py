@@ -58,7 +58,8 @@ class Forest:
         if result['action'] == "eat":
             self.remove_animal(animal_two) 
         if result['action'] == "mate":
-            self.add_animal(result['child'])
+            for child in result['children']:
+                self.add_animal(child)
 
     def select_animals(self):
         "Chooses two animals to have an encounter, if possible. Otherwise, returns None"
