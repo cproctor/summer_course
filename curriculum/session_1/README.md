@@ -59,6 +59,10 @@ Homework
 
 You should work on this for about three hours between now and Session 2. 
 
+0. Implement a few other subclasses of Animal and update `run_forest.py`
+   so that it lets them interact. See if you can create a dynamic but 
+   stable ecosystem where predators keep other populations in check.
+
 1. Write a Card class to represent a playing card. Card should pass the 
    tests in test_card.py. You can use card.py to get started. (Make sure 
    your card.py file stays in the same folder as test_card.py, so that 
