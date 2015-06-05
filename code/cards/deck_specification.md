@@ -9,7 +9,7 @@ How a Deck should work
   
       &lt;Deck: [&lt;AS&gt;, &lt;10H&gt;, &lt;5C&gt;, &lt;6D&gt;]&gt;
 
-  (Hint: once Cards have proper representations, `[&lt;AS&gt;, &lt;10H&gt;, &lt;5C&gt;, &lt;6D&gt;]`
+  (Hint: once Cards have proper representations, `[<AS>, <10H>, <5C>, <6D>]`
   is just the representation of a list containing cards. If you don't define
   a __str__ method, the __repr__ method is used as a default.)
 - `deck.shuffle()` should shuffle the cards in the deck. (Hint: 
