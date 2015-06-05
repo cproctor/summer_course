@@ -9,7 +9,7 @@ How a Card should work
   Ace of Hearts, Ace of Spades
 
   If a card is initialized with anything other than an int between 0 and 51, 
-  a ValueError should be raised.
+  a `ValueError` should be raised.
 
 - `card.rank()` should return the appropriate element of Card.ranks 
 - `card.short_rank()` should return the appropriate element of Card.short_ranks 
@@ -20,6 +20,6 @@ How a Card should work
 - a card's string (the result of the `__str__` method being called)
   should be the same as `card.name()`
 - a card's representation (the result of the `__repr__` method being called) should 
-  be "<2C>", "<JD>", etc.
+  be "<2C>", "<10D>", etc.
 - You should be able to compare cards by rank. The 10 of Hearts is greater than
   the 5 of Spades; the 6 of Diamonds is equal to the 6 of Hearts.
