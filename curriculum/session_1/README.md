@@ -42,6 +42,7 @@ Today's plan
     - lists
     - dicts
     - functions
+        - keyword arguments
     - odds and ends
         - string formatting
         - documentation (docstrings and comments)
