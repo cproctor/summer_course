@@ -40,6 +40,12 @@ Updating your fork
 The easiest way to update your fork with changes I made is to use the GitHub website, as 
 described [here](http://www.hpique.com/2013/09/updating-a-fork-directly-from-github/).
 
+If you want to use Terminal, there are two steps:
+
+1. [Add an upstream remote](https://help.github.com/articles/configuring-a-remote-for-a-fork/), pointing to 
+   my original repository
+2. [Sync your fork](https://help.github.com/articles/syncing-a-fork/) with the original repo.
+
 
 
 
