@@ -4,6 +4,7 @@ How a Deck should work
 - A Deck can be initialized empty (`Deck()`), or with optional arguments:
     - `cards` can be a list of ints which will be converted into Cards
     - if `shuffle` is `True`, the cards will be shuffled immediately.
+    - For example, this is a deck ready for a game: `Deck(cards=range(52), shuffle=True)`
 - A Deck's representation and string should look like this:
   
       <Deck: [<AS>, <10H>, <5C>, <6D>]>
