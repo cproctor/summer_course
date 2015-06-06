@@ -41,18 +41,22 @@ class Forest:
         """
         Create an endless loop causing animals to encounter each other.
         """
+        self.log.info("A lovely day in the forest. Press Enter to move to the next day, Control+C to quit")
         while True:
             self.log.info("Day {}. {}".format(self.current_day, self.status()))
             self.current_day += 1
             if len(self.animals_list) > 1:
                 self.animal_encounter()
-            sleep(self.day_length)
+                raw_input("")
+            else:
+                self.log.info("Game over. {} is alone in the forest.".format(self.animals_list[0]))
+                break
 
     def animal_encounter(self):
         animal_one, animal_two = self.select_animals()
-        self.log.info("{} encounters {}...".format(animal_one, animal_two))
+        self.log.info("  {} encounters {}...".format(animal_one, animal_two))
         result = animal_one.encounter(animal_two)
-        self.log.info(result['message'])
+        self.log.info("  " + result['message'])
         if result['action'] == "die":
             self.remove_animal(animal_one)
         if result['action'] == "eat":
@@ -73,13 +77,13 @@ class Forest:
         if animal in self.animals_list:
             raise ValueError("{} is already in the forest!".format(animal))
         self.animals_list.append(animal)
-        self.log.info("{} joined the forest".format(animal))
+        self.log.info("  {} joined the forest".format(animal))
 
     def remove_animal(self, animal):
         "Removes an animal from the forest"
         if animal in self.animals_list:
             self.animals_list.remove(animal)
-            self.log("{} left the forest".format(animal))
+            self.log.info("  {} left the forest".format(animal))
         else:
             raise ValueError("{} is not in the forest".format(animal))
 

@@ -18,13 +18,23 @@ class Animal:
     species = "animal"
 
     def __init__(self, name, traits=None):
+        "This magic method is called whenever an Animal is created"
         self.name = name
 
     def __str__(self):
-        return "{} the animal".format(self.name)
+        """
+        This magic method provides the string representation for the Animal. 
+        For example, this is what you get when you format the Animal into another string
+        """
+        return "{} the {}".format(self.name, self.species)
 
     def __repr__(self):
-        return "<animal named {}>".format(self.name)
+        """
+        This magic method provides the representation you get when the Animal is shown 
+        in the Terminal. For example, if you type Animal("Suzy"), you will see the result of
+        this Method
+        """
+        return "<{} named {}>".format(self.species, self.name)
 
     def encounter(self, other_animal):
         """
