@@ -35,59 +35,60 @@ Today's plan
 0. Course goals and norms.
 
     - Set up computers
+        - make sure everyone can write and run Python files
     - Communication; make sure we have the right email addresses
 
 1. Review a few important Python data structures and other tidbits
 
     - lists
-    - dicts
-    - functions
-        - keyword arguments
-    - odds and ends
-        - string formatting
-        - documentation (docstrings and comments)
+    - string formatting
 
 1. Introduce the concept of Object-Oriented Programming.
 
-    - classes, instances, methods, interfaces, variable scope
+    - classes, instances, methods
+        - A *class* is the idea of an object
+        - An *instance* is an object itself. There can be many instances that
+          share the same *class*
     - Python class syntax
     - a few magic methods
-        - __init__
-        - __str__
-        - __repr__
-        - __cmp__
-    - Play with a few classes: Animals in the Forest
-    - Design classes for a card game.
+        - \_\_init\_\_
+        - \_\_repr\_\_
+    - Play with a few classes: TeaKettle and Animals in the Forest
 
 Homework
 --------
 
-You should work on this for about three hours between now and Session 2. 
+Don't spend more than three hours on this. If you want to spend less, spend less.
+If you get stuck, feel free to email Chris, or just stop--I expect everyone to come
+to our next meeting with questions. 
 
-0. Implement a few other subclasses of Animal and update `run_forest.py`
-   so that it lets them interact. See if you can create a dynamic but 
-   stable ecosystem where predators keep other populations in check.
+1. Write Chris an email:
+    - How did today go? How did it feel? What did you like? What did you not like?
+    - What should we change for next time? 
 
-1. Write a Card class to represent a playing card. Card should pass the 
-   tests in test_card.py. You can use card.py to get started. (Make sure 
-   your card.py file stays in the same folder as test_card.py, so that 
-   the tests can find the code they're testing.)
+2. Look at `list_practice.py` (under code/python\_practice). Open up a Python 
+   session in Terminal and type in all the code in this file. Don't copy/paste;
+   it's important to actually copy it so you get used to the language.
 
-2. Start working on a Deck class to represent a pile of cards. Deck should
-   pass the tests in test_deck.py. You are not expected to complete Deck--
-   work until you get stuck, come to Session 2 with questions.
+3. Go into code/kitchen and run `kettle.py`. Add a few methods to Kettle to make 
+   it more kettle-like. Test them out!
 
+4. Go into code/animals and run `run_forest.py`. Try defining a few more subclasses
+   of Animal and put them into a forest together. If you get stuck, don't worry--
+   I'd like to spend the first part of class next time talking about your questions. 
+
+If you want more challenge: Try to change `code/animals/duck.py` so that 
+`code/animals/duck.py` is content. Here's what it means to be a duck:
+
+- A Duck's species should be "duck"
+- When a Duck named Daffy encounters another Duck named Diffy, , the returned 
+  message should be "Quack! Daffy sees Diffy!"
+- If a Duck encounters an Ogre, the returned action should be "die" because Ogres
+  eat Ducks. 
 
 Coming up
 ---------
 
-In the next few meetings we will be finishing the Card and Deck classes so that
-we can write programs that play card games. Remember "war", that really boring 
-card game you used to play when you were a kid? I've always wondered how long, 
-on average, it takes to finish a game. We're going to find out!
-
-By then we will be pretty comfortable desigining object-oriented solutions in 
-Python, and we will be ready to start learning Java. (Coming from Python, Java 
-might seem similar but just more irritating. We will be ready to understand why
-some of Java's differences might actually be better.)
-
+Next time, we're going to start by showing off our fancy teakettles and our forests
+full of animals, and talking about any questions you have. Then we'll design some 
+more classes.
