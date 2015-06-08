@@ -62,18 +62,18 @@ Don't spend more than three hours on this. If you want to spend less, spend less
 If you get stuck, feel free to email Chris, or just stop--I expect everyone to come
 to our next meeting with questions. 
 
-1. Write Chris an email:
+0. Write Chris an email:
     - How did today go? How did it feel? What did you like? What did you not like?
     - What should we change for next time? 
 
-2. Look at `list_practice.py` (under code/python\_practice). Open up a Python 
+1. Look at `list_practice.md` (under code/python\_practice). Open up a Python 
    session in Terminal and type in all the code in this file. Don't copy/paste;
    it's important to actually copy it so you get used to the language.
 
-3. Go into code/kitchen and run `kettle.py`. Add a few methods to Kettle to make 
+2. Go into code/kitchen and run `kettle.py`. Add a few methods to Kettle to make 
    it more kettle-like. Test them out!
 
-4. Go into code/animals and run `run_forest.py`. Try defining a few more subclasses
+3. Go into code/animals and run `run_forest.py`. Try defining a few more subclasses
    of Animal and put them into a forest together. If you get stuck, don't worry--
    I'd like to spend the first part of class next time talking about your questions. 
 
