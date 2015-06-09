@@ -14,6 +14,7 @@ Today's plan
 0. Share our work
     - We will start by sharing the code we have written for tea kettles and forests
     - Discuss your questions
+    - Designing a duck
 
 1. Back to Git
     - We will commit our work into our git repositories.
@@ -23,10 +24,10 @@ Today's plan
     - aside: JSON, and saving data in files
 
 3. A few magic methods
-    - __init__
-    - __str__
-    - __repr__
-    - __cmp__
+    - \_\_init\_\_
+    - \_\_str\_\_
+    - \_\_repr\_\_
+    - \_\_cmp\_\_
 
 4. Start designing a card game
 
