@@ -22,4 +22,10 @@ How a Card should work
 - a card's representation (the result of the `__repr__` method being called) should 
   be "<2C>", "<10D>", etc.
 - You should be able to compare cards by rank. The 10 of Hearts is greater than
-  the 5 of Spades; the 6 of Diamonds is equal to the 6 of Hearts.
+  the 5 of Spades; the 6 of Diamonds is equal to the 6 of Hearts. To do this you will
+  need to add a \_\_cmp\_\_ method to Card which takes one argument--another card. 
+  When you compare cards (like `card1 > card2`), what really happens is 
+  card1.__cmp__(card2). \_\_cmp\_\_ should return an integer. If the first 
+  number is greater, the integer should be greater than 0. If the two are 
+  equal, return 0. And if the first number is less than the second number, 
+  return an integer less than 0.
