@@ -24,7 +24,7 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO, format="%(message)s")
 class Forest:
     "A forest is an environment for Animals"
 
-    def __init__(self, day_length=2, log=None):
+    def __init__(self, day_length=None, log=None):
         """
         When creating a new Forest, a user can optionally pass in a log object, 
         which collects messages as a program is running. By using different kinds
@@ -41,13 +41,16 @@ class Forest:
         """
         Create an endless loop causing animals to encounter each other.
         """
-        self.log.info("A lovely day in the forest. Press Enter to move to the next day, Control+C to quit")
+        self.log.info("A lovely day in the forest.")
         while True:
             self.log.info("Day {}. {}".format(self.current_day, self.status()))
             self.current_day += 1
             if len(self.animals_list) > 1:
                 self.animal_encounter()
-                raw_input("")
+                if self.day_length is not None:
+                    sleep(self.day_length)
+                else:
+                    raw_input("")
             else:
                 self.log.info("Game over. {} is alone in the forest.".format(self.animals_list[0]))
                 break
@@ -77,13 +80,13 @@ class Forest:
         if animal in self.animals_list:
             raise ValueError("{} is already in the forest!".format(animal))
         self.animals_list.append(animal)
-        self.log.info("  {} joined the forest".format(animal))
+        self.log.debug("  {} joined the forest".format(animal))
 
     def remove_animal(self, animal):
         "Removes an animal from the forest"
         if animal in self.animals_list:
             self.animals_list.remove(animal)
-            self.log.info("  {} left the forest".format(animal))
+            self.log.debug("  {} left the forest".format(animal))
         else:
             raise ValueError("{} is not in the forest".format(animal))
 
