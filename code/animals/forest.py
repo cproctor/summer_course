@@ -57,7 +57,7 @@ class Forest:
 
     def animal_encounter(self):
         animal_one, animal_two = self.select_animals()
-        self.log.info("  {} encounters {}...".format(animal_one, animal_two))
+        self.log.debug("  {} encounters {}...".format(animal_one, animal_two))
         result = animal_one.encounter(animal_two)
         self.log.info("  " + result['message'])
         if result['action'] == "die":
