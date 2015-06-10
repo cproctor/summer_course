@@ -38,14 +38,83 @@ Homework
    Terminal and type all these commands so that you get some practice 
    with using dicts.
 
-1. Write a Card class to represent a playing card. Card should pass the 
+1. Write duck.py, which should define a subclass of Animal called Duck.
+   When you run test_duck.py, it tests your version of Duck. Change Duck 
+   until it passes all the tests.
+
+2. Write a Card class to represent a playing card. Card should pass the 
    tests in test\_card.py. You can use card.py to get started. (Make sure 
    your card.py file stays in the same folder as test\_card.py, so that 
    the tests can find the code they're testing.)
 
-2. Try to commit your changes so that they are visible on GitHub. See if
-   you can also sync your fork with this repository. 
-
-3. Challenge: Start working on a Deck class to represent a pile of cards. Deck should
+4. Challenge: Start working on a Deck class to represent a pile of cards. Deck should
   pass the tests in test\_deck.py. You are not expected to complete Deck--
   work until you get stuck, come to Session 3 with questions.
+
+Hint:
+
+Here's some Python code that might be really helpful in converting integers between 
+0 and 51 into the corresponding cards. It relies on integer division 
+(which throws away the remainder) and mod (the opposite--throws away the answer to the
+division problem and only keeps the remainder). 
+
+    >>> suits = ["Clubs", "Diamonds", "Hearts", "Spades"]
+    >>> ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
+    >>> for num in range(52):
+    ...     rank = num / 4
+    ...     suit = num % 4
+    ...     print("The {} of {}".format(ranks[rank], suits[suit]))
+    ... 
+    The 2 of Clubs
+    The 2 of Diamonds
+    The 2 of Hearts
+    The 2 of Spades
+    The 3 of Clubs
+    The 3 of Diamonds
+    The 3 of Hearts
+    The 3 of Spades
+    The 4 of Clubs
+    The 4 of Diamonds
+    The 4 of Hearts
+    The 4 of Spades
+    The 5 of Clubs
+    The 5 of Diamonds
+    The 5 of Hearts
+    The 5 of Spades
+    The 6 of Clubs
+    The 6 of Diamonds
+    The 6 of Hearts
+    The 6 of Spades
+    The 7 of Clubs
+    The 7 of Diamonds
+    The 7 of Hearts
+    The 7 of Spades
+    The 8 of Clubs
+    The 8 of Diamonds
+    The 8 of Hearts
+    The 8 of Spades
+    The 9 of Clubs
+    The 9 of Diamonds
+    The 9 of Hearts
+    The 9 of Spades
+    The 10 of Clubs
+    The 10 of Diamonds
+    The 10 of Hearts
+    The 10 of Spades
+    The Jack of Clubs
+    The Jack of Diamonds
+    The Jack of Hearts
+    The Jack of Spades
+    The Queen of Clubs
+    The Queen of Diamonds
+    The Queen of Hearts
+    The Queen of Spades
+    The King of Clubs
+    The King of Diamonds
+    The King of Hearts
+    The King of Spades
+    The Ace of Clubs
+    The Ace of Diamonds
+    The Ace of Hearts
+    The Ace of Spades
+    >>> 
