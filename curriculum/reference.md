@@ -7,8 +7,7 @@ I'll keep things here that you may need to refer to from time to time.
 Using Git
 ---------
 
-Making Commits
-++++++++++++++
+### Making Commits
 
 Commits are a way of saving changes to your work. It's good to commit 
 frequently. There are two main ways to use git: using the GitHub program,
@@ -34,8 +33,7 @@ From Terminal:
 5. Once you're ready to commit, type `git commit -m "A message explaining what's new..."`
 6. type `git push` to upload your changes to GitHub. Now everyone can see them.
 
-Updating your fork
-++++++++++++++++++++++++
+### Updating your fork
 
 The easiest way to update your fork with changes I made is to use the GitHub website, as 
 described [here](http://www.hpique.com/2013/09/updating-a-fork-directly-from-github/).
