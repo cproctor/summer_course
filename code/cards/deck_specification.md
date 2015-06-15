@@ -5,12 +5,12 @@ How a Deck should work
     - `cards` can be a list of ints which will be converted into Cards
     - if `shuffle` is `True`, the cards will be shuffled immediately.
     - For example, this is a deck ready for a game: `Deck(cards=range(52), shuffle=True)`
-- A Deck's representation and string should look like this:
+- A Deck''s representation and string should look like this:
   
       &lt;Deck: [&lt;AS&gt;, &lt;10H&gt;, &lt;5C&gt;, &lt;6D&gt;]&gt;
 
   (Hint: once Cards have proper representations, `[<AS>, <10H>, <5C>, <6D>]`
-  is just the representation of a list containing cards. If you don't define
+  is just the representation of a list containing cards. If you don''t define
   a __str__ method, the __repr__ method is used as a default.)
 - `deck.shuffle()` should shuffle the cards in the deck. (Hint: 
   [random.shuffle](https://docs.python.org/2/library/random.html#random.shuffle)
