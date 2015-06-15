@@ -63,7 +63,10 @@ class TestDeck(unittest.TestCase):
 
     def test_add_deck(self):
         self.fullDeck.add_deck(self.acesDeck)
-        self.assertEqual(self.fullDeck.count(), 56)
+        self.assertEqual(self.fullDeck.draw(), Card(51))
+        self.assertEqual(self.fullDeck.draw(), Card(50))
+        self.assertEqual(self.fullDeck.draw(), Card(49))
+        self.assertEqual(self.fullDeck.draw(), Card(48))
         
     def assertNotInSameOrder(self, deck1, deck2):
         foundADifference = False
