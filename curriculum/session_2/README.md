@@ -24,10 +24,12 @@ Today's plan
     - aside: JSON, and saving data in files
 
 3. A few magic methods
-    - \_\_init\_\_
-    - \_\_str\_\_
-    - \_\_repr\_\_
-    - \_\_cmp\_\_
+    - \_\_init\_\_ is called when a new instance of your class is created
+    - \_\_str\_\_ defines the string representation of your class (how users should see it)
+    - \_\_repr\_\_ defines how your class should appear when debugging
+    - \_\_cmp\_\_ compares an instance with another instance. Should return a
+      positive int if this instance is greater, 0 if the two are equal, and a
+      negative int if the other instance is greater.
 
 4. Start designing a card game
 
