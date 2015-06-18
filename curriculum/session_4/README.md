@@ -1,10 +1,10 @@
-Session 3
+Session 4
 =========
 
 Preparation
 -----------
 
-Try the [homework from session 2](https://github.com/cproctor/summer_course/tree/master/curriculum/session_2) and come to class with questions. You don't have to complete everything--stop if you get stuck!
+Try the [homework from session 3](https://github.com/cproctor/summer_course/tree/master/curriculum/session_3) and come to class with questions. You don't have to complete everything--stop if you get stuck!
 
 Today's plan
 ------------
@@ -79,6 +79,23 @@ Today's plan
 Homework
 --------
 
-See if you can complete `deck.py` so that it passes all the tests in 
-test\_deck.py. If you get stuck, send Chris an email or stop and 
-bring your questions to our next meeting. 
+0. See if you can complete `deck.py` so that it passes all the tests in 
+   test\_deck.py. If you get stuck, send Chris an email or stop and 
+   bring your questions to our next meeting. 
+
+1. We are going to build a game of War, as described in the 
+   [Wikipedia article](https://en.wikipedia.org/wiki/War_(card_game)).
+   What other classes will be needed? Make a plan for the other classes
+   we will need and write a specification for each, following the model
+   of `card_specification.md` and `deck_specification.md`. A few notes
+   on the rules of War:
+     - When a player wins cards in a battle, they will go into a discard pile.
+       When a player's deck runs out, she shuffles her discard pile and uses 
+       this as her deck.
+     - We will use the variation where in a battle, three cards are played
+       face down, and then another card is turned up to determine the
+       winner of the battle.
+     - If a player runs out of cards during a battle, the final card is used 
+       as the face-up card for the remainder of the battle.
+
+
