@@ -19,7 +19,7 @@ Today's plan
       so that the programmer can learn as quickly as possible that there's a 
       problem.
 
-    - The `\_\_cmp\_\_` method gave several of us trouble. It should be defined 
+    - The `__cmp__` method gave several of us trouble. It should be defined 
       like this:
  
           def __cmp__(self, other_card):
