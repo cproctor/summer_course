@@ -79,10 +79,6 @@ Today's plan
 Homework
 --------
 
-See if you can complete card.py so that it passes all the tests in 
-test\_card.py. If you get stuck, send Chris an email or stop and 
+See if you can complete `deck.py` so that it passes all the tests in 
+test\_deck.py. If you get stuck, send Chris an email or stop and 
 bring your questions to our next meeting. 
-
-If you finish and want another challenge, try starting on deck.py. 
-Read deck\_specification.py to see how a deck is supposed to work. 
-You can use test\_deck.py to test your code.
