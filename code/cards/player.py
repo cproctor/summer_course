@@ -1,3 +1,5 @@
+from deck import Deck
+
 class Player:
     """Represents a player in a card game. When the player
     draws cards, she will draw from her draw deck. When the draw deck runs
