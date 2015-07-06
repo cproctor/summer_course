@@ -22,8 +22,10 @@ class Player:
         self.discardPile.add_deck(deck)
 
     def draw_card(self):
-        if self.drawPile.count() == 0:
+        if self.drawPile.empty():
             self.shuffle_in_discard_pile()
+            if self.drawPile.empty():
+                return None
         return self.drawPile.draw()
 
     def shuffle_in_discard_pile(self):
