@@ -9,16 +9,13 @@ class Player:
     def __str__(self):
         return self.name
 
-    def cards(self):
-        return self.drawPile.count() + self.discardPile.count()
+    def has_any_cards(self):
+        return not (self.drawPile.empty() or self.discardPile.empty())
 
-    def has_cards(self):
-        return self.cards() != 0
-
-    def win_card(self, card):
+    def take_card(self, card):
         self.discardPile.add(card)
 
-    def win_deck(self, deck):
+    def take_deck(self, deck):
         self.discardPile.add_deck(deck)
 
     def draw_card(self):
@@ -28,7 +25,7 @@ class Player:
                 return None
         return self.drawPile.draw()
 
-    def shuffle_in_discard_pile(self):
+    def shuffle_discard_deck_into_draw_deck(self):
         self.drawPile.add_deck(self.discardPile)
         self.drawPile.shuffle()
 
