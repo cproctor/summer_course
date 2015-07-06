@@ -1,81 +1,57 @@
 from player import Player
 from deck import Deck
 
-class WarGame:
+class War:
+    "A game of War."
+
     def __init__(self):
-        self.turn = 0
-        self.p1 = Player("Player 1")
-        self.p2 = Player("Player 2")
-        startingDeck = Deck(range(52))
+        """Sets up the players and the deck for a game of war. Then deals 
+        out the cards to the players. Sets self.battles to 0. Finally, 
+        creates a battle deck for each player. This will be used in the
+        battle method."""
+        self.battles = 0
+        self.playerOne = Player()
+        self.playerTwo = Player()
+        self.battleDeckOne = Deck()
+        self.battleDeckTwo = Deck()
+        startingDeck = Deck(range(52), shuffle=True)
         while not startingDeck.empty():
-            self.p1.win_card(startingDeck.draw())
-            self.p2.win_card(startingDeck.draw())
-    
-    def play_turn(self):
-        self.turn += 1
-        self.log_start_turn()
-        p1Card = self.p1.draw_card()
-        p2Card = self.p2.draw_card()
+            self.playerOne.take_card(startingDeck.draw())
+            self.playerTwo.take_card(startingDeck.draw())
 
-        if not (p1Card and p2Card):
-            self.log("Game over!")
-            return False
+    def play(self):
+        """Plays the entire game of war until it is over, then returns an
+        int showing how many battles were in the game."""
+        while not self.game_is_over():
+            self.battle()
+            self.battles += 1
+        return self.battles
 
-        if p1Card != p2Card:
-            if p1Card > p2Card:
-                self.p1.win_card(p1Card)
-                self.p1.win_card(p2Card)
-                self.log("  P1 {} wins agains P2 {}".format(p2Card, p1Card))
-            elif p2Card > p1Card:
-                self.p2.win_card(p1Card)
-                self.p2.win_card(p2Card)
-                self.log("  P2 {} wins agains P1 {}".format(p2Card, p1Card))
+    def game_is_over(self):
+        """Returns True if the game is over (if either player has no cards). 
+        Otherwise returns False."""
+        return not (
+            self.playerOne.has_any_cards() and self.playerTwo.has_any_cards()
+        )
+
+    def battle(self):
+        """ Plays a battle between the two players. There are a few steps:
+            1. Draw cards for battle (try to draw a card for each player)
+            2. If the top cards in each battle deck are different, then one 
+               player has won the battle. Have the winning player take both
+               decks.
+            3. If the top cards in each battle deck are the same, then have
+               each player draw three cards for battle, and then call battle
+                again.
+        """
+        self.draw_cards_for_battle()
+        if self.battleDeckOne.peek() == self.battleDeckTwo.peek():
+            for _ in range(3):
+                self.draw_cards_for_battle()
+            self.battle()
+        elif self.battleDeckOne.peek() > self.battleDeckTwo.peek(): 
+            self.playerOne.take_deck(self.battleDeckOne)
+            self.playerOne.take_deck(self.battleDeckTwo)
         else:
-            self.war(p1Card, p2Card)
-
-    def war(self, p1Card, p2Card):
-        self.log("  WAR! P1 {} and P2 {}.".format(p1Card, p2Card))
-        p1WarPile = Deck([p1Card.number])
-        p2WarPile = Deck([p2Card.number])
-
-        while p1WarPile.peek() == p2WarPile.peek():
-            for i in range(3):
-                if self.p1.has_cards():
-                    card = self.p1.draw_card()
-                    self.log("    P1 draws {}".format(card))
-                    p1WarPile.add(card)
-            for i in range(3):
-                if self.p2.has_cards():
-                    card = self.p2.draw_card()
-                    self.log("    P2 draws {}".format(card))
-                    p2WarPile.add(card)
-            if p1WarPile.peek() == p2WarPile.peek():
-                self.log(" STILL FIGHTING! P1 {} P2 {}".format(
-                    p1WarPile.peek(), 
-                    p2WarPile.peek()
-                ))
-        if p1WarPile.peek() > p2WarPile.peek():
-            self.log("  P1 Wins the war! P1 {}, P2 {}".format(
-                p1WarPile.peek(), 
-                p2WarPile.peek()
-            ))
-            self.p1.win_deck(p1WarPile)
-            self.p1.win_deck(p2WarPile)
-        else:
-            self.log("  P2 Wins the war! P1 {}, P2 {}".format(
-                p1WarPile.peek(), 
-                p2WarPile.peek()
-            ))
-            self.p2.win_deck(p1WarPile)
-            self.p2.win_deck(p2WarPile)
-        
-    def game_over(self):
-        return self.p1.cards() == 0 or self.p2.cards() == 0
-
-    def log_start_turn(self):
-        self.log("TURN {}: P1 has {} cards and P2 has {} cards".format(
-            self.turn, self.p1.cards(), self.p2.cards()
-        ))
-
-    def log(self, message):
-        print(message)
+            self.playerTwo.take_deck(self.battleDeckOne)
+            self.playerTwo.take_deck(self.battleDeckTwo)
