@@ -55,3 +55,13 @@ class War:
         else:
             self.playerTwo.take_deck(self.battleDeckOne)
             self.playerTwo.take_deck(self.battleDeckTwo)
+
+    def draw_cards_for_battle(self):
+        """Tries to draw a card from each player. If the player has a card, 
+        adds it to the appropriate battle deck"""
+        cardOne = self.playerOne.draw()
+        if cardOne:
+            self.battleDeckOne.add(cardOne)
+        cardTwo = self.playerTwo.draw()
+        if cardTwo:
+            self.battleDeckTwo.add(cardTwo)
