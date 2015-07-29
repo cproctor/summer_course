@@ -141,4 +141,4 @@ class Lexicon:
         word. The strategy is simple: make every possible arrangement of the 
         letters, and then only keep the ones that are actually words."""
         possible_words = [''.join(combo) for combo in permutations(letters)]
-        return filter(self.is_a_word, possible_words)
+        return list(set(filter(self.is_a_word, possible_words)))
